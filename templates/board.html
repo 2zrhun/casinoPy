@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poker</title>
+    <link rel="stylesheet" href="static/style.css">
+    <script src="scrpt.js"></script>
+</head>
+<body>
+    <h1>yo</h1>
+    <div class="header-playground">
+        <p>{{ session['wallet']}}</p>
+    </div>
+    <div class="card-platground">
+        <img class="card-img" src="{{ url_for('static',filename='cards/back.png') }}" alt="">
+        <input type="checkbox" id="Cb" class="cb">
+        <img class="card-img" src="{{ url_for('static',filename='cards/back.png') }}" alt="">
+        <input type="checkbox" id="Cb" class="cb">
+        <img class="card-img" src="{{ url_for('static',filename='cards/back.png') }}" alt="">
+        <input type="checkbox" id="Cb" class="cb">
+        <img class="card-img" src="{{ url_for('static',filename='cards/back.png') }}" alt="">
+        <input type="checkbox" id="Cb" class="cb">
+        <img class="card-img" src="{{ url_for('static',filename='cards/back.png') }}" alt="">
+        <input type="checkbox" id="Cb" class="cb">
+    </div>
+    <form method="post">
+        <input type="number" name="bet" min="1" placeholder="bet">
+        <input type="submit" value="play">
+    </form>
+</body>
+</html>
