@@ -34,9 +34,9 @@ def tirage1():
         session['tirage1'], session['deck1'] = premier_tirage(deck)
         return redirect(url_for('game'))
 
-# @app.route('/game')
-# def game():
-#     return render_template('game.html')
+@app.route('/board/game')
+def game():
+    return render_template('game.html')
 
 
 if __name__ == '__main__':
