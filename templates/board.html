@@ -7,6 +7,7 @@
     <title>Poker</title>
     <link rel="stylesheet" href="static/style.css">
     <script src="scrpt.js"></script>
+    <script src="{{url_for('static', filename='script.js')}}"></script>
 </head>
 <body>
     <h1>GAME</h1>
@@ -14,7 +15,7 @@
         <p>{{ session['wallet']}}</p>
     </div>
     <div class="card-platground">
-        <img class="card-img" src="{{ url_for('static',filename='cards/back.png') }}" alt="">
+        <img class="card-img" src="{{ url_for('static',filename='cards/back.png') }}" onclick="clickedCard(this)">
         <input type="checkbox" id="Cb" class="cb">
         <img class="card-img" src="{{ url_for('static',filename='cards/back.png') }}" alt="">
         <input type="checkbox" id="Cb" class="cb">
