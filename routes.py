@@ -1,7 +1,6 @@
-
 from flask import Flask,render_template,url_for,request,session,redirect
 from error import eror, bet_eror
-from module_tirage import premier_tirage, deuxieme_tirage,machine,choix_cartes()
+from module_tirage import premier_tirage, deuxieme_tirage,machine,choix_cartes
 
 app = Flask(__name__)
 app.secret_key = "key"
@@ -39,12 +38,12 @@ def tirage1():
         session['eror-form'] = bet_eror
         return render_template('board.html')
     else:
-        session['tirage1'], session['deck1'] = premier_tirage(deck)
-        session['jeu'] = choix_cartes()
+        tirage1 , deck1 = premier_tirage(deck)
+        session['tirage1'] = tirage1
+        session['deck1'] = deck1
         
-       
 
-        return redirect(url_for('game',tirage1=session['tirage1'],deck=session['deck1'],jeux=session['jeu']))
+        return redirect(url_for('game'))
 
 @app.route('/board/game',methods=['POST','GET'])
 def game():
@@ -52,6 +51,20 @@ def game():
     return render_template('game.html')
 
 
+@app.route('/board/game/game2', methods=['POST','GET'])
+def check_card():
+    user_age2 = 1
+    if request.method == 'POST':
+        print(request.form.getlist('i'))
+        return 'done'
+    
+    return render_template('game.html')
+    
+        
+
+@app.route('/board/game/game2', methods=['POST','GET'])
+def card2():
+    return render_template('game2.html')
 
 
 if __name__ == '__main__':

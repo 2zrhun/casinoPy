@@ -9,44 +9,39 @@
 </head>
 <body>
     <h1>First Round</h1>
-    <form method="POST">
+    <form action ="/board/game/game2" method="POST">
         <div class="contend-card">
             <h2>{{ session['tirage1']}} test </h2>
             
           
-            
+         
 
-            {% for i in session['tirage1']%}
+            {% for i in session['tirage1'] %}
               
                 
                     <img class="cardd" src="{{ url_for('static',filename='cards/'+i+'.png') }}">
-                    <input type="checkbox" id="{{i}}" name="{{i}}" onclick="checked_card()">
+                    <input type="checkbox" id="{{i}}" name="i" value="test" onclick="checked_card()" data-card="data-card">
                    <script>
                             function checked_card()
                             {
                                 if (document.getElementById("{{i}}").checked == true)
                                 {
-                                    //jeu.append(i)
+                                    
                                     alert('la case est cochée');
                                 }
 
                             }
                     </script>
                     
-                    {% if session['jeu'] == False :%}
-
-                        jeu.append(i)
-
-                    {% endif %}  
-                        
                     
             {% endfor %}   
-                <h3>{{jeu}} cartes selectionnees</h3>
+                <h3>{{ session['jeu'] }} cartes selectionnees</h3>
                
         </div>  
         <input type="submit" value="end-first-round"></input>
+        
           
     </form>
-    <script src="{{url_for('static', filename='script.js')}}"></script>
+   
 </body>
 </html>
