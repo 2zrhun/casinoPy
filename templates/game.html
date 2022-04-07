@@ -20,7 +20,7 @@
               
                 
                     <img class="cardd" src="{{ url_for('static',filename='cards/'+i+'.png') }}">
-                    <input type="checkbox" id="{{i}}" name="i" value="test" onclick="checked_card()" data-card="data-card">
+                    <input type="checkbox" id="{{i}}" name="i" value="{{i}}" onclick="checked_card()" data-card="data-card">
                    <script>
                             function checked_card()
                             {

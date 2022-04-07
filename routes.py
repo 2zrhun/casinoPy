@@ -53,10 +53,11 @@ def game():
 
 @app.route('/board/game/game2', methods=['POST','GET'])
 def check_card():
-    user_age2 = 1
+    
     if request.method == 'POST':
-        print(request.form.getlist('i'))
-        return 'done'
+        tet=request.form.getlist('i')
+        print(tet)
+        return str(tet)
     
     return render_template('game.html')
     
