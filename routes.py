@@ -51,15 +51,15 @@ def game():
     return render_template('game.html')
 
 
-@app.route('/board/game/game2', methods=['POST','GET'])
+@app.route('/board/game', methods=['POST','GET'])
 def check_card():
     
     if request.method == 'POST':
-        tet=request.form.getlist('i')
-        print(tet)
-        return str(tet)
+        session['tet']=request.form.getlist('i')
+        print(session['tet'])
+        return str(session['tet'])
     
-    return render_template('game.html')
+    return render_template('game2.html')
     
         
 

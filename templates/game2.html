@@ -7,8 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>{{ session['i'] }} checked-card</h1>
-    <h1>{{jeu}} test2</h1>
+    <h3>{{ session['tet'] }} checked-card</h3>
+    <h4><img class="cardd" src="{{ url_for('static',filename='cards/'+session['tet'][0]+'.png') }}"></h4>
+        
+        <div class="contend-card">
+
+            {% for i in session['tet'] %}
+                  
+                    
+             <img class="cardd" src="{{ url_for('static',filename='cards/'+session['tet'][0]+'.png') }}">
+                        
+                        
+                        
+            {% endfor %}   
+        </div>
+    
     
 </body>
 </html>
