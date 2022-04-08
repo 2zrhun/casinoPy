@@ -9,11 +9,11 @@
 </head>
 <body>
     <h1>First Round</h1>
-    <form action ="/board/game/game2" method="POST">
+    <form action ="/board/game" method="POST">
         <div class="contend-card">
             <h2>{{ session['tirage1']}} test </h2>
             
-          
+            <h3>{{ session['bet']}}</h3>
          
 
             {% for i in session['tirage1'] %}

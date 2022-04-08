@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,21 +7,23 @@
     <title>Document</title>
 </head>
 <body>
-    <h3>{{ session['tet'] }} checked-card</h3>
-    <h4>Cartes</h4>
+    <form action="/board/game/game2" method="POST">
+         <h3>{{ session['tet'] }} checked-card</h3>
+         <h4>Cartes {{ tr2}}</h4>
+         <h5>{{ session['g']}} gain</h5>
+         
+         <div class="contend-card">
+ 
+             {% for i in session['tet'] %}
+                   
+                     
+              <img class="cardd" src="{{ url_for('static',filename='cards/'+i+'.png') }}">
+                         
+                         
+             {% endfor %}   
+         </div>
      
-        <div class="contend-card">
-
-            {% for i in session['tet'] %}
-                  
-                    
-             <img class="cardd" src="{{ url_for('static',filename='cards/'+i+'.png') }}">
-                        
-                        
-                        
-            {% endfor %}   
-        </div>
-    
+     </form>
     
 </body>
 </html>
