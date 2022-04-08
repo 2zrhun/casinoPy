@@ -1,4 +1,6 @@
 
+
+
 from flask import Flask,render_template,url_for,request,session,redirect
 from error import eror, bet_eror
 from module_tirage import premier_tirage, deuxieme_tirage,machine,choix_cartes
@@ -80,6 +82,12 @@ def check_card():
 def card2():
     
     return render_template('game2.html')
+
+
+
+@app.route('/end',methods=['POST','GET'])
+def end():
+    return render_template('end.html')
 
 
 if __name__ == '__main__':
